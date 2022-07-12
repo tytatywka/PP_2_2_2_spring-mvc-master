@@ -17,12 +17,6 @@ public class CarController {
         this.carService = carService;
     }
 
-/*    @GetMapping()
-    public String all (Model model) {
-        model.addAttribute("list",carService.allList());
-    return "cars/all";
-    }*/
-
     @GetMapping("/cars")
     public String show (@RequestParam(value = "count", defaultValue = "5") int count, Model model) {
         model.addAttribute("list", carService.carsCount(count));
